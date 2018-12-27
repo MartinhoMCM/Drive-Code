@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Drive Code</string>
+    <string name="title">DriveCode</string>
+    <string name="login">Login</string>
+    <string name="register">Registrar</string>
+    <string name="easyOk">Tudo fica mais fácil</string>
+    <string name="forget">Esqueceu a password ?</string>
+
+
+    <string name="easy_desc">Com Drive code aprendas todos codigos de estrada</string>
+    <string name="everywhere">Código atualizado</string>
+    <string name="everywhere_desc">Com Drive code aprendas todos codigos de estrada</string>
+    <string name="Prepare">Prepara-se para o exame</string>
+    <string name="Prepare_desc">Prepara-se para o exame</string>
+    <string name="logo">logo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_repassword">Confirme a Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sing_up_short">Sign up</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_register">Sign up</string>
+    <string name="ANTERIOR">ANTERIOR</string>
+    <string name="PROXIMO">PROXIMO</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <!-- User Information -->
+    <string name="email">Email</string>
+    <string name="image">Image</string>
+    <string name="exame">Exame</string>
+    <string name="Rendimento">Rendimento</string>
+    <string name="ajuda">Ajuda</string>
+    <string name="sair">Sair</string>
+    <string name="indice">Indice</string>
+    <string name="normas">1. Normas</string>
+    <string name="sinais_de_tr_nsito">2. Sinais de Trânsito</string>
+    <string name="_3_condutor_e_seu_estado_f_sico_e_psicol_gico">3. Condutor e Seu Estado Físico e Psicológico</string>
+
+</resources>
