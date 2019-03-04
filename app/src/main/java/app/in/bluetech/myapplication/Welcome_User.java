@@ -2,6 +2,7 @@ package app.in.bluetech.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,10 +12,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Welcome_User extends AppCompatActivity {
+import app.in.bluetech.myapplication.authentication.LoginActivity;
+import app.in.bluetech.myapplication.authentication.RegisterActivity;
+
+public class Welcome_User extends AppCompatActivity  {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<ListItem> item_list;
@@ -22,7 +30,11 @@ public class Welcome_User extends AppCompatActivity {
     private TextView [] dots;
     Intent intent;
 
-    Button blogin, bregister;
+    Button btn_next;
+    private FirebaseUser user;
+    private FirebaseAuth auth;
+
+    public static final String str="user";
 
 
     @Override
@@ -30,8 +42,15 @@ public class Welcome_User extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome__user);
 
-        blogin = findViewById(R.id.button_login);
-        bregister=findViewById(R.id.button_register);
+
+        //Firebase Authentication
+
+
+
+        btn_next = findViewById(R.id.btn_next);
+
+       // blogin = findViewById(R.id.button_login);
+      //  bregister=findViewById(R.id.button_register);
         Intent intent;
 
 
@@ -40,58 +59,55 @@ public class Welcome_User extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         dotsLayout = (LinearLayout) findViewById(R.id.dotsLinearLayout);
         item_list = new ArrayList<>();
+
+        adapter = new ListItemAdapter(this, item_list);
+        recyclerView.setAdapter(adapter);
+
+        TypedArray getImageRes = getResources().obtainTypedArray(R.array.image_slider_array);
         for (int i=0; i<3; i++)
         {
             switch (i)
             {
                 case 0:
-                    ListItem listItem0 =new ListItem(getString(R.string.easyOk), getString(R.string.easy_desc));
+                    ListItem listItem0 =new ListItem(getString(R.string.easyOk), getString(R.string.easy_desc), getImageRes.getResourceId(i,0));
                     item_list.add(listItem0);
+
                     break;
 
-                case 1: ListItem listItem1 = new ListItem(getString(R.string.everywhere), getString(R.string.everywhere_desc));
+                case 1: ListItem listItem1 = new ListItem(getString(R.string.everywhere), getString(R.string.everywhere_desc), getImageRes.getResourceId(i, 0));
                 item_list.add(listItem1);
+
                 break;
 
-                case 2: ListItem listItem2 = new ListItem(getString(R.string.Prepare), getString(R.string.Prepare_desc));
+                case 2: ListItem listItem2 = new ListItem(getString(R.string.Prepare), getString(R.string.Prepare_desc), getImageRes.getResourceId(i,0));
                 item_list.add(listItem2);
                 break;
             }
         }
-        adapter = new ListItemAdapter(this, item_list);
-        recyclerView.setAdapter(adapter);
-        dotsIndicator();
+
+
+        getImageRes.recycle();
 
     }
 
-    public void dotsIndicator(){
-
-        dots = new TextView[3];
-        for (int i=0; i<dots.length;i++)
+    public void Proximo(View view) {
+        auth =FirebaseAuth.getInstance();
+        user=auth.getCurrentUser();
+        if(user==null)
         {
-           dots[i]= new TextView(this);
-           dots[i].setText(Html.fromHtml("&#8226;"));
-           dots[i].setTextSize(40);
-           dots[i].setTextColor(getResources().getColor(R.color.transparent_gray_color));
-           dotsLayout.addView(dots[i]);
+            startActivity(new Intent(Welcome_User.this, RegisterActivity.class));
+            finish();
+            return;
         }
-    }
-
-
-    public void LoginSection(View view) {
-        intent= new Intent(this, LoginActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-        finish();
-
-    }
-
-    public  void RegisterSection(View view)
-    {
-        Intent register = new Intent(this, RegisterActivity.class);
-        startActivity(register);
-        finish();
-
+        else
+        {
+            String  User_name =user.getDisplayName();
+            Intent  intent_login = new Intent(Welcome_User.this, LoginActivity.class);
+            intent_login.putExtra(str, User_name );
+            startActivity(intent_login);
+            finish();
+            return;
+        }
     }
 }
 

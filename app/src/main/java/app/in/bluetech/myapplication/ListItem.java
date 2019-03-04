@@ -8,10 +8,12 @@ public class ListItem {
 
     public String head;
     public String desc;
+    private final int imageResource;
 
-    public ListItem(String head, String desc) {
+    public ListItem(String head, String desc, int imageResource) {
         this.head = head;
         this.desc = desc;
+        this.imageResource = imageResource;
     }
 
     public String getHead() {
@@ -21,4 +23,15 @@ public class ListItem {
     public String getDesc() {
         return desc;
     }
+
+    public int getImageResource() {
+        return imageResource;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+
 }

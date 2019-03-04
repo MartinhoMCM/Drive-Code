@@ -1,8 +1,11 @@
 package app.in.bluetech.myapplication;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +15,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseUser mFirebaseUser;
+
+     TextView user_name, user_email;
+    private String name;
+    private String email;
+    private Uri photoUrl;
+    ImageView user_image;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,24 +44,6 @@ public class DrawerActivity extends AppCompatActivity
         setContentView(R.layout.activity_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-        if(findViewById(R.id.fragment_container)!=null)
-        {
-            if(savedInstanceState!=null) {
-                return;
-            }
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new ContentFragment()).addToBackStack(null).commit();
-        }
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -49,6 +53,33 @@ public class DrawerActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+      RecyclerView recyclerView = findViewById(R.id.recyclerview);
+      LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+      recyclerView.setLayoutManager(linearLayoutManager);
+
+      List<IndiceInfo> infoList = DataInstance_Indice.getInstance().getIndice();
+      Indice_Adapter adapter = new Indice_Adapter(this, infoList );
+      recyclerView.setAdapter(adapter);
+
+      // Firebase
+        mFirebaseAuth = FirebaseAuth.getInstance();
+       mFirebaseUser =mFirebaseAuth.getCurrentUser();
+        if(mFirebaseUser!=null)
+        {
+            name = mFirebaseUser.getDisplayName();
+            email = mFirebaseUser.getEmail();
+            photoUrl = mFirebaseUser.getPhotoUrl();
+        }
+
+       /** user_name = findViewById(R.id.user_name);
+        user_email=  findViewById(R.id.user_email);
+        user_image = findViewById(R.id.user_photo);
+
+        user_name.setText(name);
+        user_email.setText(email);
+        user_image.setImageURI(photoUrl);
+        **/
     }
 
     @Override

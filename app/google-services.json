@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "354529815456",
+    "firebase_url": "https://drivecode-cc857.firebaseio.com",
+    "project_id": "drivecode-cc857",
+    "storage_bucket": "drivecode-cc857.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354529815456:android:c326c6715a807ef5",
+        "android_client_info": {
+          "package_name": "app.in.bluetech.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354529815456-o4g5a6tbic700p1kvla2fh81k2o9ia29.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.in.bluetech.myapplication",
+            "certificate_hash": "4ec3dc0f2eb0e74d43270c18dca4c2bfeccb3e1c"
+          }
+        },
+        {
+          "client_id": "354529815456-0faap2m0k5hqcpc2epiqh2sc9o2aqivs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO1J2vAXZ7F96LpGlHn7IQHssNZ7PPQ68"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "354529815456-0faap2m0k5hqcpc2epiqh2sc9o2aqivs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

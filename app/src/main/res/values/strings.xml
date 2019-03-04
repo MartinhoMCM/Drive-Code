@@ -1,12 +1,11 @@
 <resources>
+
     <string name="app_name">Drive Code</string>
     <string name="title">DriveCode</string>
     <string name="login">Login</string>
     <string name="register">Registrar</string>
     <string name="easyOk">Tudo fica mais fácil</string>
     <string name="forget">Esqueceu a password ?</string>
-
-
     <string name="easy_desc">Com Drive code aprendas todos codigos de estrada</string>
     <string name="everywhere">Código atualizado</string>
     <string name="everywhere_desc">Com Drive code aprendas todos codigos de estrada</string>
@@ -14,13 +13,14 @@
     <string name="Prepare_desc">Prepara-se para o exame</string>
     <string name="logo">logo</string>
 
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
+    <string name="prompt_password">Palavra Passe</string>
     <string name="prompt_repassword">Confirme a Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -54,5 +54,189 @@
     <string name="normas">1. Normas</string>
     <string name="sinais_de_tr_nsito">2. Sinais de Trânsito</string>
     <string name="_3_condutor_e_seu_estado_f_sico_e_psicol_gico">3. Condutor e Seu Estado Físico e Psicológico</string>
+    <string name="content">Conteúdos</string>
+    <string name="proximo">Próximo</string>
+
+    <string name="perigo_introducao">
+        Sinais de perigo : indicam a existência ou a possibilidade de aparecimento de condições particularmente perigosas
+        para o trânsito que imponham especial atenção e prudência ao condutor. \n\n
+        Os sinais de perigo não devem ser colocados a menos de 150m nem a mais de 300m do ponto da via a que se refrem, a não ser que as condições do lacl não permitam, devendo, neste caso, ser utilizado um painel adicional indicador da distância.
+
+    </string>
+    <string name="sinal_de_perigo">sinal_de_perigo</string>
+    <string name="bem_ao_drivecode">Bem ao DriveCode</string>
+    <string name="fa_a_o_login_para_continuar">Faça o login para continuar</string>
+    <string name="main_image">main_image</string>
+    <string name="registrar_para_uma_conta">Registrar para uma conta?</string>
+    <string name="s_novo_usu_rio">És novo usuário?</string>
+
+    <string-array name="contents_perigo_array">
+        <item> Curva à direita</item>
+        <item> Curva à esquerda</item>
+        <item> Curva à direita e contracurva</item>
+        <item> Curva à esquerda e contracurva</item>
+        <item> Lomba</item>
+        <item> Depressão</item>
+        <item> Lomba ou depressão</item>
+
+        <!--
+        <item> Descida perigosa</item>
+        <item> Subida de inclinação acentuada</item>
+        <item> Passagem estreita</item>
+        <item> Passagem estreita</item>
+        <item> Passagem estreita</item>
+        <item> Pavimento escorregadio</item>
+        <item> Projeção de gravilha</item>
+-->
+    </string-array>
+
+    <array name="image_perigo_array">
+        <item>@drawable/curvaadireita</item>
+        <item>@drawable/curvaaesquerda</item>
+        <item>@drawable/curvadireitaecontracurva</item>
+        <item>@drawable/curvaesquerdacontracurva</item>
+        <item>@drawable/lomba</item>
+        <item>@drawable/depressao</item>
+        <item>@drawable/lombadepressao</item>
+        <item>@drawable/descidaperigosa</item>
+        <item>@drawable/subidainclinacaoacentuada</item>
+        <item>@drawable/passagemestreita</item>
+        <item>@drawable/passagemestreitadireita</item>
+        <item>@drawable/passagemestreitaesquerda</item>
+        <item>@drawable/pavimentoescorregadio</item>
+        <item>@drawable/projecaodegravilha</item>
+    </array>
+
+    <!--- SInais de Regulamentacao-->
+    <string name="scedencia">Sinais de cedência de passagem</string>
+    <string name="sinais_regulamentacao">Sinais de Regulamentação</string>
+
+    <string name="sregulamentation_intreducao">
+       Os sinais de regulamentação destinam-se a transmitir aos utentes obrigações, restrições ou proibições especiais e subdidivem-se em:  \n
+
+           Sinais de cedência de passagem \n
+           Sinais de proibição \n
+           Sinais de obrigação \n
+           Sinais de prescrição \n
+               1. Sinais de seleção de vias; \n
+               2. Sinais de afectação de vias; \n
+               3. Sinais de zona.
+
+    </string>
+
+    <string name="scedencia_introducao">
+      Sinais de cedência de passagem - informa aos condutores da existência de um cruzamento, entrocamento, rotunda ou passagem estreita,
+        onde lhes é imposto um determinadi comportamento ou uma especial atenção.
+    </string>
+
+    <string name="scobrigacao_introducao">
+     Sinais de obrigação : transmitem aos utentes a imposição de determinados compartamentos.\n
+        Devem ser colocados na proximidade imediata do local onde a obrigação começa, com excepção dos sinais D1, D2 e D4, que podem
+        ser colocados a uma distância conveniente do local onde a obrigação é imposta.
+    </string>
+
+
+    <string name="fa_a_o_seu_sign_in_para_come_ar">Faça o seu sign in para começar</string>
+    <string name="password">Password</string>
+
+    <array name="image_cedencia_array">
+        <item>@drawable/cedencia_de_passagem</item>
+        <item>@drawable/paragem_obrigatoria_em_cruzamentos_ou_entroncamentos</item>
+        <item>@drawable/via_com_prioridade</item>
+        <item>@drawable/fim_de_via_com_prioridade</item>
+        <item>@drawable/cedencia_de_passagem_nos_estreitamentos_da_faixa_de_rodagem</item>
+        <item>@drawable/estreitamentos_da_faixa_de_rodagem</item>
+        <item>@drawable/aproximacao_de_rotunda</item>
+        <item>@drawable/cruzamento_com_via_sem_prioridade</item>
+        <item>@drawable/entroncamento_com_via_sem_prioridade_2</item>
+        <item>@drawable/entroncamento_com_via_sem_prioridade_3</item>
+        <item>@drawable/entroncamento_com_via_sem_prioridade_4</item>
+        <item>@drawable/entroncamento_com_via_sem_prioridade_5</item>
+    </array>
+
+    <string-array name="content_scendencia_lista">
+        <item>Cedência de passagem</item>
+        <item>Paragem obrigatória</item>
+        <item>Via com prioridade</item>
+        <item>Fim da via com prioridade</item>
+        <item>Cedência de passagem</item>
+        <item>Prioridades nos estreitamentos da faixa de rodagem</item>
+        <item>aproximação de rotunda</item>
+        <item>Cruzamento com via sem prioridade</item>
+        <item>Entrocamento com via sem prioridade</item>
+        <item>Entrocamento com via sem prioridade</item>
+        <item>Entrocamento com via sem prioridade</item>
+        <item>Entrocamento com via sem prioridade</item>
+
+    </string-array>
+
+    <!--- Sinais de Proibicao   -->
+    <string-array name="content_sproibicao_lista">
+        <item> Sentido proibido</item>
+        <item>Trânsito proibido</item>
+        <item>Trânsito proibido a automóveis com carro</item>
+        <item>Trânsito proibido a automóveis pesados</item>
+        <item>Trânsito proibido a automóveis de mercadorias</item>
+        <item>Trânsito probido a automóveis de mercadorias de peso total superior a, ...toneladas</item>
+        <item>Trânsito proibido a motociclos simples</item>
+        <item>Trânsito proibido a Velocípedes</item>
+    </string-array>
+
+    <array name="image_proibicao_array">
+        <item>@drawable/sentido_proibido</item>
+        <item>@drawable/transito_proibido</item>
+        <item>@drawable/transito_proibido_a_automoveis_e_motociclo</item>
+        <item>@drawable/transito_proibido_a_automoveis_pesados</item>
+        <item>@drawable/transito_proibido_a_automoveis_de_mercadoria</item>
+        <item>@drawable/transito_proibido_a_veiculo_de_peso_total_superior_a</item>
+        <item>@drawable/transito_proibido_a_moticiclos_simples</item>
+        <item>@drawable/transito_proibido_a_velocipedes</item>
+    </array>
+
+    <string name="sinais_de_probicao_introducao">
+        Sinais de proibição : transmitem aos utentes a interdição de determinados comportamentos.\n
+        Devem ser colocados na proximidade imediata do local onde a proibição começa, com excessãõ de "proibição de virar á direita e a esquerda, e inversão de sentido de marcha.
+    </string>
+
+
+    <string name="btn_forgot_password">Esqueceste a palavra passe?</string>
+    <string name="btn_link_to_login">Já estás registrado?. <b>Login !</b></string>
+
+    <string name="or">OR</string>
+    <string name="sinais_de_proibicaoo">Sinais de Proibição</string>
+
+
+    <string-array name="content_obrigacao_array">
+        <item>Sentido obrigatório</item>
+        <item>Sentido obrigatório</item>
+        <item>Sentido obrigatório</item>
+        <item>Sentido obrigatório</item>
+        <item>Sentido obrigatório</item>
+        <item>Sentido obrigatório Possíveis</item>
+        <item>Sentido obrigatório Possíveis</item>
+        <item>Sentido obrigatório Possíveis</item>
+        <item>Obrigação de contornar a placa ou obstáculo</item>
+        <item>Obrigação de contornar a placa ou obstáculo</item>
+    </string-array>
+
+
+    <array name="image_obrigacao_array">
+        <item>@drawable/sentido_obrigatorio1</item>
+        <item>@drawable/sentido_obrigatorio2</item>
+        <item>@drawable/sentido_obrigatorio3</item>
+        <item>@drawable/sentido_obrigatorio4</item>
+        <item>@drawable/sentido_obrigatorio5</item>
+        <item>@drawable/sentido_obrigatorio_possiveis1</item>
+        <item>@drawable/sentidos_obrigatorios_possiveis2</item>
+        <item>@drawable/sentidos_obrigatorios_possiveis3</item>
+        <item>@drawable/obrigacao_de_contornar_a_placa_ou_obstaculo1</item>
+        <item>@drawable/obrigacao_de_contornar_a_placa_ou_obstaculo2</item>
+
+    </array>
+    <array name="image_slider_array">
+        <item>@drawable/shield</item>
+        <item>@drawable/shield</item>
+        <item>@drawable/shield</item>
+    </array>
 
 </resources>
