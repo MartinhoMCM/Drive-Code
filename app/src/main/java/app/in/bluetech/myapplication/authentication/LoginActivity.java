@@ -62,26 +62,38 @@ public class LoginActivity extends AppCompatActivity  {
 
                 String email =Input_email.getText().toString();
                 String password=Input_password.getText().toString();
-                firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if(task.isSuccessful())
-                        {
-                            FirebaseUser getUser =firebaseAuth.getCurrentUser();
-                            startActivity( new Intent(LoginActivity.this, DrawerActivity.class));
-                            finish();
+                if(email.length()!=0 && password.length()!=0){
+
+                    firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+
+                            if(task.isSuccessful())
+                            {
+                                FirebaseUser getUser =firebaseAuth.getCurrentUser();
+                                startActivity( new Intent(LoginActivity.this, DrawerActivity.class));
+                                finish();
+                            }
+                            else
+
+                            {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(getApplicationContext(), "Autenticação falhou. Tens a certeza que estás registrado?",
+                                        Toast.LENGTH_SHORT).show();
+                                //startActivity( new Intent(LoginActivity.this, DrawerActivity.class));
+                               // finish();
+                            }
+
                         }
-                        else
+                    });
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Campos vazios", Toast.LENGTH_SHORT).show();
+                }
 
-                        {
-                            progressBar.setVisibility(View.GONE);
-                            Toast.makeText(getApplicationContext(), "Autenticação falhou. Tens a certeza que estás registrado?",
-                                    Toast.LENGTH_SHORT).show();
-                        }
 
-                    }
-                });
 
     }
     @Override

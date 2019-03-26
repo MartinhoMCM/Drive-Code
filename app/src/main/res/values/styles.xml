@@ -20,8 +20,8 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="buton_pattern">
-        <item name="android:layout_width">117dp</item>
-        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_alignParentStart">true</item>
         <item name="android:layout_marginLeft">8dp</item>
@@ -31,6 +31,17 @@
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:background">@drawable/shape_button</item>
         <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="desc_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
     </style>
 
 

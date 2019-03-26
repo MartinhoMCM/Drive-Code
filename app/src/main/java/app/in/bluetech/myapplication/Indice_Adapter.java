@@ -15,6 +15,7 @@ import app.in.bluetech.myapplication.sinais_regulamentacao.priority_signal.SR_Ac
 import app.in.bluetech.myapplication.sinais_regulamentacao.priority_signal.sinais_cedenciaPassagem.SCedenciaPassagemActivity;
 import app.in.bluetech.myapplication.sinais_regulamentacao.priority_signal.sinais_obrigacao.SobrigacaoActivity;
 import app.in.bluetech.myapplication.sinais_regulamentacao.priority_signal.sinal_proibido.SproibicaoActivity;
+import app.in.bluetech.myapplication.general_concepts.gereralTrafficSignalActivity;
 
 /**
  * Created by martinhocorreiamussamba on 24/02/19.
@@ -25,6 +26,7 @@ public class Indice_Adapter extends RecyclerView.Adapter<Indice_Adapter.IndiceVi
     private Context context;
     private LayoutInflater inflater;
     List<IndiceInfo> infoList ;
+
 
     public Indice_Adapter(Context context, List<IndiceInfo> infoList) {
         this.context = context;
@@ -46,7 +48,6 @@ public class Indice_Adapter extends RecyclerView.Adapter<Indice_Adapter.IndiceVi
           holder.desc.setText(indiceInfo.getmSubtitle());
           holder.mCurrentPosition =position;
     }
-
     @Override
     public int getItemCount() {
         return infoList.size();
@@ -58,6 +59,7 @@ public class Indice_Adapter extends RecyclerView.Adapter<Indice_Adapter.IndiceVi
         private TextView head;
         private TextView desc;
         public int mCurrentPosition;
+
         public IndiceViewHolder(View itemView) {
             super(itemView);
             head =itemView.findViewById(R.id.head);
@@ -70,6 +72,17 @@ public class Indice_Adapter extends RecyclerView.Adapter<Indice_Adapter.IndiceVi
         public void onClick(View v) {
             Intent intent;
 
+            if (mCurrentPosition==0)
+            {
+                context.startActivity(new Intent(context, gereralTrafficSignalActivity.class));
+            }
+
+            else
+            if(mCurrentPosition==8)
+            {
+                context.startActivity(new Intent(context, SCedenciaPassagemActivity.class));
+            }
+
             if(mCurrentPosition==9)
             {
                   intent = new Intent(context, SinaisPerigoIntroducaoActivity.class);
@@ -81,11 +94,7 @@ public class Indice_Adapter extends RecyclerView.Adapter<Indice_Adapter.IndiceVi
                 {
                     context.startActivity(new Intent(context, SR_Activity.class));
                 }
-            else
-                if(mCurrentPosition==11)
-                {
-                    context.startActivity(new Intent(context, SCedenciaPassagemActivity.class));
-                }
+
             else if(mCurrentPosition==12)
                 {
                     context.startActivity(new Intent(context, SproibicaoActivity.class));
@@ -98,4 +107,6 @@ public class Indice_Adapter extends RecyclerView.Adapter<Indice_Adapter.IndiceVi
 
         }
     }
+
+
 }

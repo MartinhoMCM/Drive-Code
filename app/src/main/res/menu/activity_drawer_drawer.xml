@@ -7,12 +7,12 @@
         <item
             android:id="@+id/exame_nav"
             android:icon="@drawable/ic_library_books_black_24dp"
-            android:title="Exame" />
+            android:title="Quiz Code" />
 
         <item
             android:id="@+id/resultado_nav"
             android:icon="@drawable/ic_bookmark_black_24dp"
-            android:title="Resultados"/>
+            android:title="Pontuação"/>
         <item
             android:id="@+id/rendimeto_nav"
             android:icon="@drawable/ic_show_chart_black_24dp"

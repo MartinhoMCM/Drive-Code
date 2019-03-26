@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:clipToPadding="true"
     tools:context="app.in.bluetech.myapplication.contents_signal.SPP1_Activity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+ >
 
     <TextView
         android:id="@+id/titulo"

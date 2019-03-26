@@ -1,7 +1,10 @@
 package app.in.bluetech.myapplication.authentication;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -31,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity  {
 
     private FirebaseAuth mFirebaseAuth;
     private String TAG="firebase";
+    private  boolean connected=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +75,25 @@ public class RegisterActivity extends AppCompatActivity  {
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                createAccount();
+                ConnectivityManager connectivityManager
+                        = (ConnectivityManager)getSystemService(getApplication().CONNECTIVITY_SERVICE);
+                if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                        connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+                    //we are connected to a network
+                    createAccount();
+                    Toast.makeText(getApplicationContext(), "Tem conexão a internet", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+
+                    Toast.makeText(getApplicationContext(), "Sem conexão a internet", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+
+
+
 
             }
         });
@@ -79,6 +101,9 @@ public class RegisterActivity extends AppCompatActivity  {
     }
 
     private void createAccount() {
+
+
+
          mFirebaseAuth.createUserWithEmailAndPassword(input_email.getText().toString(), input_password.getText().toString()).
                  addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                      @Override
@@ -88,6 +113,7 @@ public class RegisterActivity extends AppCompatActivity  {
                              Log.d(TAG, "createUserWithEmail:success");
                              FirebaseUser user =mFirebaseAuth.getCurrentUser();
                              startActivity(new Intent(RegisterActivity.this, DrawerActivity.class));
+                             finish();
 
                          }
                          else
@@ -106,6 +132,7 @@ public class RegisterActivity extends AppCompatActivity  {
         super.onStart();
 
         FirebaseUser currentUser = mFirebaseAuth.getCurrentUser();
+        //updateUI
     }
 
     @Override
@@ -120,4 +147,6 @@ public class RegisterActivity extends AppCompatActivity  {
         startActivity( new Intent(RegisterActivity.this, LoginActivity.class));
         finish();
     }
+
+
 }

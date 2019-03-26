@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#196cbd</color>
-    <color name="colorPrimaryDark">#1358aa</color>
+    <color name="colorPrimary">#113780</color>
+    <color name="colorPrimaryDark">#13326d</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#fff</color>
     <color name="skyblue">#7ec0ee</color>
     <color name="hex_deep_sky">#87ceff</color>
     <color name="orage">#F4511E</color>
-    <color name="transparent_gray_color">#cccccc</color>
+    <color name="transparent_white">#cccccc</color>
 
     <color name="colorPrimary1">#00bcd4</color>
     <color name="colorPrimaryDark1">#0097a7</color>
@@ -25,4 +25,9 @@
     <color name="btn_login_bg">#eceef1</color>
     <color name="lbl_name">#333333</color>
     <color name="btn_logut_bg">#ff6861</color>
+
+    <color name="background_ux">#D6D6F6</color>
+    <color name="background_ux1">#F5F5FD</color>
+
+    <color name="background_activity">#F7FAFA</color>
 </resources>

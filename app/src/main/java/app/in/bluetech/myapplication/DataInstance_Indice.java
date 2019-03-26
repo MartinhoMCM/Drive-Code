@@ -30,15 +30,12 @@ public class DataInstance_Indice {
     public void InitializeIndiceContent()
     {
 
-        final DataInstance_Indice dm =getInstance();
+       // final DataInstance_Indice dm =getInstance();
 
         mNotes.add(new IndiceInfo("Código de Estrada", "Conceitos Gerais"));
         mNotes.add( new IndiceInfo("Elementos do Sistema Rodoviário", "Normas"));
         mNotes.add(new IndiceInfo("Vias", "Sua classificação e elementos"));
         mNotes.add(new IndiceInfo("Veículos automóveis", "Sua classificação e elementos"));
-        mNotes.add(new IndiceInfo("Vias", "Sua classificação e elementos"));
-        mNotes.add(new IndiceInfo("Transporte de pessoas e de cargas", "Sua classificação e elementos"));
-        mNotes.add(new IndiceInfo("Acessórios Obrigatórios", "Sua classificação e elementos"));
         mNotes.add(new IndiceInfo("Função da condução. Tempo de Reação", "Distâncias de segurança, de travagem e de paragem"));
         mNotes.add(new IndiceInfo("Sinalização Temporária", "Marcas Rodoviárias. Sinais Verticais. Sinalização luminosa"));
         mNotes.add(new IndiceInfo("Sinais de perigo", "Conceitos "));

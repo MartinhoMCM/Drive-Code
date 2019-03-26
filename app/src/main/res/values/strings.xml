@@ -6,11 +6,11 @@
     <string name="register">Registrar</string>
     <string name="easyOk">Tudo fica mais fácil</string>
     <string name="forget">Esqueceu a password ?</string>
-    <string name="easy_desc">Com Drive code aprendas todos codigos de estrada</string>
+    <string name="easy_desc">DriveCode te ajuda aprender todos códigos de estrada</string>
     <string name="everywhere">Código atualizado</string>
-    <string name="everywhere_desc">Com Drive code aprendas todos codigos de estrada</string>
+    <string name="everywhere_desc">DriveCode fornece códigos atualizados</string>
     <string name="Prepare">Prepara-se para o exame</string>
-    <string name="Prepare_desc">Prepara-se para o exame</string>
+    <string name="Prepare_desc">DriveCode permite fazer pré-exame para veres o teu nível de preparação</string>
     <string name="logo">logo</string>
 
 
@@ -233,10 +233,53 @@
         <item>@drawable/obrigacao_de_contornar_a_placa_ou_obstaculo2</item>
 
     </array>
-    <array name="image_slider_array">
-        <item>@drawable/shield</item>
-        <item>@drawable/shield</item>
-        <item>@drawable/shield</item>
-    </array>
+    <string name="codigo_estrada">
+Artigo 1.º — Conceitos Gerais\n
+Para os efeitos do disposto no presente Código e legislação complementar, os termos seguintes têm o significado que lhes é atribuído neste artigo: \n
+
+a) «Autoestrada» - via pública destinada a trânsito rápido, com separação física de faixas de rodagem, sem cruzamentos de nível nem acesso a propriedades marginais, com acessos condicionados e sinalizada como tal;\n
+b) «Berma» - superfície da via pública não especialmente destinada ao trânsito de veículos e que ladeia a faixa de rodagem;\n
+c) «Caminho» - via pública especialmente destinada ao trânsito local em zonas rurais;\n
+d) «Corredor de circulação» - via de trânsito reservada a veículos de certa espécie ou afetos a determinados transportes;\n
+e) «Cruzamento» - zona de intersecção de vias públicas ao mesmo nível;\n
+f) «Eixo da faixa de rodagem» - linha longitudinal, materializada ou não, que divide uma faixa de rodagem em duas partes, cada uma afeta a um sentido de trânsito;\n
+g) «Entroncamento» - zona de junção ou bifurcação de vias públicas;\n
+h) «Faixa de rodagem» - parte da via pública especialmente destinada ao trânsito de veículos;\n
+i) «Ilhéu direcional» - zona restrita da via pública, interdita à circulação de veículos e delimitada por lancil ou marcação apropriada, destinada a orientar o trânsito;\n
+j) «Localidade» - zona com edificações e cujos limites são assinalados com os sinais regulamentares;\n
+l) «Parque de estacionamento» - local exclusivamente destinado ao estacionamento de veículos;\n
+m) «Passagem de nível» - local de intersecção ao mesmo nível de uma via pública ou equiparada com linhas ou ramais ferroviários;\n
+n) «Passeio» - superfície da via pública, em geral sobrelevada, especialmente destinada ao trânsito de peões e que ladeia a faixa de rodagem;\n
+o) «Pista especial» - via pública ou via de trânsito especialmente destinada, de acordo com sinalização, ao trânsito de peões, de animais ou de certa espécie de veículos;\n
+p) «Rotunda» - praça formada por cruzamento ou entroncamento onde o trânsito se processa em sentido giratório e sinalizada como tal;\n
+q) «Utilizadores vulneráveis» - peões e velocípedes, em particular, crianças, idosos, grávidas, pessoas com mobilidade reduzida ou pessoas com deficiência;\n
+r) «Via de abrandamento» - via de trânsito resultante do alargamento da faixa de rodagem e destinada a permitir que os veículos que vão sair de uma via pública diminuam a velocidade já fora da corrente de trânsito principal;\n
+s) «Via de aceleração» - via de trânsito resultante do alargamento da faixa de rodagem e destinada a permitir que os veículos que entram numa via pública adquiram a velocidade conveniente para se incorporarem na corrente de trânsito principal;\n
+t) «Via de sentido reversível» - via de trânsito afeta alternadamente, através de sinalização, a um ou outro dos sentidos de trânsito;\n
+u) «Via de trânsito» - zona longitudinal da faixa de rodagem destinada à circulação de uma única fila de veículos;\n
+v) «Via equiparada a via pública» - via de comunicação terrestre do domínio privado aberta ao trânsito público;\n
+x) «Via pública» - via de comunicação terrestre afeta ao trânsito público;\n
+z) «Via reservada a automóveis e motociclos» - via pública onde vigoram as normas que disciplinam o trânsito em autoestrada e sinalizada como tal;\n
+aa) «Zona de estacionamento» - local da via pública especialmente destinado, por construção ou sinalização, ao estacionamento de veículos;\n
+bb) «Zona de coexistência» - zona da via pública especialmente concebida para utilização partilhada por peões e veículos, onde vigoram regras especiais de trânsito e sinalizada como tal.
+    </string>
+
+    <string name="hierarquia">
+        Para evitar situações de conflito ou embaraço no trânsito, estabeleceu-se uma hierarquia entre os sinais, cuja ordem de prevalência é a seguinte:
+
+Agentes da Autoridade
+Sinalização Temporária
+Sinalização de Mensagem Variável
+Sinais Luminosos
+Sinais Verticais
+Marcas Rodoviárias
+Regras Gerais de Trânsito
+Fazem parte dos Sinais Verticais os sinais de perigo, de regulamentação, de indicação e os sinais de carácter turístico-cultural.
+    </string>
+
+    <string name="sinalizacao_temporaria">
+        A sinalização temporária destina-se a prevenir os utentes da existência de obras ou obstáculos ocasionais na via pública e a transmitir as obrigações, restrições ou
+        proibições especiais que temporariamente lhes são impostas.
+    </string>
 
 </resources>

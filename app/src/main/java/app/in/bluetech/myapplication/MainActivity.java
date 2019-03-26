@@ -1,6 +1,7 @@
 package app.in.bluetech.myapplication;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
@@ -18,13 +19,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mLogo = findViewById(R.id.main_image);
-        mTitle = findViewById(R.id.mtitle);
-
+      //  mLogo = findViewById(R.id.main_image);
+     //   mTitle = findViewById(R.id.mtitle);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.animation);
-        mLogo.startAnimation(animation);
-        mTitle.startAnimation(animation);
+       // mLogo.startAnimation(animation);
+        //mTitle.startAnimation(animation);
 
         final Intent intent = new Intent(this, Welcome_User.class);
 
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void run()
             {
               try {
-                  sleep(3000);
+                  sleep(8000);
               }
               catch (InterruptedException e)
               {
