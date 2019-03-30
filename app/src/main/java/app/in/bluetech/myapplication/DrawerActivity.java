@@ -1,8 +1,10 @@
 package app.in.bluetech.myapplication;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.design.widget.NavigationView;
@@ -23,6 +25,7 @@ import com.google.firebase.auth.UserInfo;
 
 import java.util.List;
 
+import app.in.bluetech.myapplication.quiz_code.LevelQuizActivity;
 import app.in.bluetech.myapplication.quiz_code.QuizCodeActivity;
 
 public class DrawerActivity extends AppCompatActivity
@@ -127,17 +130,20 @@ public class DrawerActivity extends AppCompatActivity
 
         if (id == R.id.exame_nav) {
 
-
-            startActivity(new Intent(this, QuizCodeActivity.class   ));
+            startActivity(new Intent(this, LevelQuizActivity.class   ));
 
             // Handle the camera action
-        } else if (id == R.id.rendimeto_nav) {
-
         } else if (id == R.id.resultado_nav) {
-
+             PossibleEXITORCONTINUE();
         } else if (id == R.id.ajuda_nav) {
 
         } else if (id == R.id.sair_nav) {
+
+            if(user!=null) {
+                mFirebaseAuth.signOut();
+            }
+            startActivity(new Intent(getApplicationContext(), Welcome_User.class));
+            finish();
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -146,6 +152,25 @@ public class DrawerActivity extends AppCompatActivity
     }
 
 
+    private void PossibleEXITORCONTINUE() {
 
+        QuizCodeActivity quizCodeActivity =new QuizCodeActivity();
+
+            AlertDialog.Builder  alertdialog = new AlertDialog.Builder(DrawerActivity.this);
+            alertdialog.setMessage("A tua última pontuação é "+ quizCodeActivity.getLastSCore() + " pontos").
+                    setCancelable(false).setPositiveButton("CANCELAR", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    startActivity(new Intent(getApplicationContext(), QuizCodeActivity.class));
+                    finish();
+                }
+            });
+
+
+            AlertDialog dialog =alertdialog.create();
+            dialog.show();
+
+        }
 
 }

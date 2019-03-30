@@ -16,10 +16,7 @@ import app.in.bluetech.myapplication.sinais_regulamentacao.priority_signal.sinai
 import app.in.bluetech.myapplication.sinais_regulamentacao.priority_signal.sinais_obrigacao.SobrigacaoActivity;
 import app.in.bluetech.myapplication.sinais_regulamentacao.priority_signal.sinal_proibido.SproibicaoActivity;
 import app.in.bluetech.myapplication.general_concepts.gereralTrafficSignalActivity;
-
-/**
- * Created by martinhocorreiamussamba on 24/02/19.
- */
+import app.in.bluetech.myapplication.sinal_temporario.SinaTemporarioActivity;
 
 public class Indice_Adapter extends RecyclerView.Adapter<Indice_Adapter.IndiceViewHolder> {
 
@@ -72,9 +69,25 @@ public class Indice_Adapter extends RecyclerView.Adapter<Indice_Adapter.IndiceVi
         public void onClick(View v) {
             Intent intent;
 
+
             if (mCurrentPosition==0)
             {
-                context.startActivity(new Intent(context, gereralTrafficSignalActivity.class));
+                context.startActivity(new Intent(context, SinaisPerigoIntroducaoActivity.class));
+            }
+            if(mCurrentPosition==5)
+            {
+                context.startActivity(new Intent(context, SinaTemporarioActivity.class));
+            }
+            if(mCurrentPosition==6)
+            {
+                intent = new Intent(context, SinaisPerigoIntroducaoActivity.class);
+                intent.putExtra("title", infoList.get(mCurrentPosition).getmTitle());
+                context.startActivity(intent);
+            }
+            else
+            if(mCurrentPosition==7)
+            {
+                context.startActivity(new Intent(context, SR_Activity.class));
             }
 
             else
@@ -83,24 +96,13 @@ public class Indice_Adapter extends RecyclerView.Adapter<Indice_Adapter.IndiceVi
                 context.startActivity(new Intent(context, SCedenciaPassagemActivity.class));
             }
 
-            if(mCurrentPosition==9)
-            {
-                  intent = new Intent(context, SinaisPerigoIntroducaoActivity.class);
-                  intent.putExtra("title", infoList.get(mCurrentPosition).getmTitle());
-                  context.startActivity(intent);
-            }
-            else
-                if(mCurrentPosition==10)
-                {
-                    context.startActivity(new Intent(context, SR_Activity.class));
-                }
 
-            else if(mCurrentPosition==12)
+            else if(mCurrentPosition==9)
                 {
                     context.startActivity(new Intent(context, SproibicaoActivity.class));
                 }
             else
-                if(mCurrentPosition==13)
+                if(mCurrentPosition==10)
                 {
                     context.startActivity(new Intent(context, SobrigacaoActivity.class));
                 }

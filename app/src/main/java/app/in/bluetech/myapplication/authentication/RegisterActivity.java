@@ -19,7 +19,9 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -28,7 +30,7 @@ import com.google.firebase.auth.FirebaseUser;
 import app.in.bluetech.myapplication.*;
 public class RegisterActivity extends AppCompatActivity  {
 
-    EditText input_email, input_password;
+    EditText input_email, input_password, input_repassword;
     Button  btnregister;
     ProgressBar progressBar;
 
@@ -46,6 +48,7 @@ public class RegisterActivity extends AppCompatActivity  {
 
         input_email = findViewById(R.id.email);
         input_password = findViewById(R.id.password);
+        input_repassword=findViewById(R.id.repassword);
 
         btnregister = findViewById(R.id.sign_up_button);
         progressBar = findViewById(R.id.progressBar);
@@ -55,56 +58,87 @@ public class RegisterActivity extends AppCompatActivity  {
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = input_email.getText().toString();
-                String password = input_password.getText().toString();
 
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Introduza o email", Toast.LENGTH_SHORT).show();
-                    return;
-                }
 
-                if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Introduza a palavra passe", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if (password.length() < 6) {
-                    Toast.makeText(getApplicationContext(), "Palavra passe muito curta, no mínimo 5 caracteres", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                progressBar.setVisibility(View.VISIBLE);
-
-                ConnectivityManager connectivityManager
-                        = (ConnectivityManager)getSystemService(getApplication().CONNECTIVITY_SERVICE);
-                if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                        connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-                    //we are connected to a network
-                    createAccount();
-                    Toast.makeText(getApplicationContext(), "Tem conexão a internet", Toast.LENGTH_SHORT).show();
-                }
-                else
+                if(validateForm())
                 {
+                    progressBar.setVisibility(View.VISIBLE);
+                    ConnectivityManager connectivityManager
+                            = (ConnectivityManager)getSystemService(getApplication().CONNECTIVITY_SERVICE);
+                    if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                            connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+                        //we are connected to a network
+                        createAccount();
+                       // Toast.makeText(getApplicationContext(), "Tem conexão a internet", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
 
-                    Toast.makeText(getApplicationContext(), "Sem conexão a internet", Toast.LENGTH_SHORT).show();
-                }
-
-
-
-
-
-
+                        Toast.makeText(getApplicationContext(), "Sem conexão a internet", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(RegisterActivity.this, DrawerActivity.class));
+                        finish();
+                    }
+                };
 
             }
         });
 
     }
 
+
+    boolean validateForm() {
+        boolean valid = true;
+        String email = input_email.getText().toString();
+        String password = input_password.getText().toString();
+        String repassword=input_repassword.getText().toString();
+
+        if (TextUtils.isEmpty(email)) {
+            input_email.setError("Campo vazio");
+            valid = false;
+        } else {
+            input_email.setError(null);
+        }
+
+        if (TextUtils.isEmpty(password)) {
+            input_password.setError("Campo vazio");
+            valid=false;
+
+        } else {
+            input_password.setError(null);
+        }
+        if(TextUtils.isEmpty(repassword))
+        {
+            input_repassword.setError("Campo Vazio");
+            valid=false;
+        }
+        else
+        {
+            input_repassword.setError(null);
+        }
+        if(!password.equals(repassword))
+        {
+           Toast.makeText(getApplicationContext(), "Palavras passes não combinam", Toast.LENGTH_LONG).show();
+        }
+
+        return  valid;
+    }
+
+     void UpdateUI(FirebaseUser user)
+    {
+
+
+        progressBar.setVisibility(View.INVISIBLE);
+
+
+    }
+
+
     private void createAccount() {
 
+        String email = input_email.getText().toString();
+        String password = input_password.getText().toString();
 
-
-         mFirebaseAuth.createUserWithEmailAndPassword(input_email.getText().toString(), input_password.getText().toString()).
+         mFirebaseAuth.createUserWithEmailAndPassword(email, password).
                  addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                      @Override
                      public void onComplete(@NonNull Task<AuthResult> task) {
@@ -120,8 +154,10 @@ public class RegisterActivity extends AppCompatActivity  {
                          {
                              // If sign in fails, display a message to the user.
                              Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                             Toast.makeText(getApplicationContext(), "Authentication failed.",
+                             Toast.makeText(getApplicationContext(), "Autenticação falhou.",
                                      Toast.LENGTH_SHORT).show();
+                             startActivity(new Intent(RegisterActivity.this, DrawerActivity.class));
+                             finish();
                          }
                      }
                  });
@@ -131,14 +167,13 @@ public class RegisterActivity extends AppCompatActivity  {
     protected void onStart() {
         super.onStart();
 
-        FirebaseUser currentUser = mFirebaseAuth.getCurrentUser();
+      //  FirebaseUser currentUser = mFirebaseAuth.getCurrentUser();
         //updateUI
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
         progressBar.setVisibility(View.GONE);
     }
 

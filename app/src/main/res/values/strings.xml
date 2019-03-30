@@ -78,8 +78,6 @@
         <item> Lomba</item>
         <item> Depressão</item>
         <item> Lomba ou depressão</item>
-
-        <!--
         <item> Descida perigosa</item>
         <item> Subida de inclinação acentuada</item>
         <item> Passagem estreita</item>
@@ -87,7 +85,6 @@
         <item> Passagem estreita</item>
         <item> Pavimento escorregadio</item>
         <item> Projeção de gravilha</item>
--->
     </string-array>
 
     <array name="image_perigo_array">
@@ -233,7 +230,50 @@
         <item>@drawable/obrigacao_de_contornar_a_placa_ou_obstaculo2</item>
 
     </array>
+
+
+    <!---  Sinal Temporario-->
+
+    <array name="st_array_image">
+        <item>@drawable/st1a</item>
+        <item>@drawable/st1b</item>
+        <item>@drawable/st1c</item>
+        <item>@drawable/st1d</item>
+        <item>@drawable/st2</item>
+        <item>@drawable/st3</item>
+        <item>@drawable/st4</item>
+        <item>@drawable/st5</item>
+        <item>@drawable/st6</item>
+        <item>@drawable/st7</item>
+        <item>@drawable/st8a</item>
+        <item>@drawable/st8b</item>
+        <item>@drawable/st9</item>
+        <item>@drawable/st10</item>
+    </array>
+
+    <string-array name="st_array_name">
+        <item>Número e sentido de vias de trânsito</item>
+        <item>Número e sentido de vias de trânsito</item>
+        <item>Número e sentido de vias de trânsito</item>
+        <item>Número e sentido de vias de trânsito</item>
+        <item> Supressão de via de trânsito</item>
+        <item>Supressão de berma</item>
+        <item>Desvio de via de trânsito</item>
+        <item> Desvio para a faixa de rodagem contrária</item>
+        <item>Estreitamento de via de trânsito</item>
+        <item>Pré-sinalização de desvio de itinerário</item>
+        <item>Desvio de itinerário</item>
+        <item> Desvio de itinerário</item>
+        <item>Pré-sinalização de desvio de itinerário</item>
+        <item>Circulação alternada</item>
+
+
+    </string-array>
+
     <string name="codigo_estrada">
+
+
+
 Artigo 1.º — Conceitos Gerais\n
 Para os efeitos do disposto no presente Código e legislação complementar, os termos seguintes têm o significado que lhes é atribuído neste artigo: \n
 
@@ -267,19 +307,21 @@ bb) «Zona de coexistência» - zona da via pública especialmente concebida par
     <string name="hierarquia">
         Para evitar situações de conflito ou embaraço no trânsito, estabeleceu-se uma hierarquia entre os sinais, cuja ordem de prevalência é a seguinte:
 
-Agentes da Autoridade
-Sinalização Temporária
-Sinalização de Mensagem Variável
-Sinais Luminosos
-Sinais Verticais
-Marcas Rodoviárias
-Regras Gerais de Trânsito
-Fazem parte dos Sinais Verticais os sinais de perigo, de regulamentação, de indicação e os sinais de carácter turístico-cultural.
+ Agentes da Autoridade
+ Sinalização Temporária
+ Sinalização de Mensagem Variável
+ Sinais Luminosos
+ Sinais Verticais
+ Marcas Rodoviárias
+ Regras Gerais de Trânsito
+ Fazem parte dos Sinais Verticais os sinais de perigo, de regulamentação, de indicação e os sinais de carácter turístico-cultural.
     </string>
 
     <string name="sinalizacao_temporaria">
         A sinalização temporária destina-se a prevenir os utentes da existência de obras ou obstáculos ocasionais na via pública e a transmitir as obrigações, restrições ou
         proibições especiais que temporariamente lhes são impostas.
     </string>
+    <string name="repassword">Reintroduza a palavra passe</string>
+    <string name="button">Button</string>
 
 </resources>

@@ -54,26 +54,5 @@ public class ScedenciaPassagemActivity extends AppCompatActivity {
         list_cedencia.recycle();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.menu_content, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-        if(id== R.id.action_next)
-        {
-            startActivity(new Intent(ScedenciaPassagemActivity.this, SproibicaoActivity.class));
-        }
-        else if (id==R.id.action_back)
-        {
-            startActivity(new Intent(ScedenciaPassagemActivity.this, SCedenciaPassagemActivity.class));
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 }

@@ -11,7 +11,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/main_image1"
+        android:icon="@drawable/main_image_logo"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:roundIcon="@drawable/main_image"
@@ -24,7 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Welcome_User" />
+        <activity android:name=".Welcome_User"
+            />
         <activity
             android:name=".DrawerActivity"
             android:label="@string/content"
@@ -41,8 +42,10 @@
         <activity android:name=".sinais_regulamentacao.priority_signal.sinal_proibido.SproibicaoActivity" />
         <activity android:name=".sinais_regulamentacao.priority_signal.sinal_proibido.SROActivity" />
         <activity android:name=".sinais_regulamentacao.priority_signal.sinais_obrigacao.SOActivity" />
-        <activity android:name=".general_concepts.gereralTrafficSignalActivity"></activity>
-        <activity android:name=".quiz_code.QuizCodeActivity"></activity>
+        <activity android:name=".general_concepts.gereralTrafficSignalActivity" />
+        <activity android:name=".quiz_code.QuizCodeActivity" />
+        <activity android:name=".sinal_temporario.SinaTemporarioActivity" />
+        <activity android:name=".quiz_code.LevelQuizActivity"></activity>
     </application>
 
 </manifest>

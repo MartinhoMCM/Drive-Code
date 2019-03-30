@@ -7,16 +7,13 @@
         <item
             android:id="@+id/exame_nav"
             android:icon="@drawable/ic_library_books_black_24dp"
-            android:title="Quiz Code" />
+            android:title="Exame" />
 
         <item
             android:id="@+id/resultado_nav"
             android:icon="@drawable/ic_bookmark_black_24dp"
             android:title="Pontuação"/>
-        <item
-            android:id="@+id/rendimeto_nav"
-            android:icon="@drawable/ic_show_chart_black_24dp"
-            android:title="Rendimento" />
+
         <item
             android:id="@+id/ajuda_nav"
             android:icon="@drawable/ic_help_black_24dp"
@@ -30,7 +27,8 @@
             <item
                 android:id="@+id/sair_nav"
                 android:icon="@drawable/ic_exit_to_app_black_24dp"
-                android:title="Sair" />
+                android:title="Sair"
+                />
         </menu>
     </item>
 

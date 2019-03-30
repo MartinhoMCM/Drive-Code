@@ -63,25 +63,5 @@ public class SPP1_Activity extends AppCompatActivity {
         perigonImageRes.recycle();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.menu_content, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-        if(id== R.id.action_next)
-        {
-            startActivity(new Intent(SPP1_Activity.this, SR_Activity.class));
-        }
-        else if (id==R.id.action_back)
-        {
-            startActivity(new Intent(SPP1_Activity.this, SinaisPerigoIntroducaoActivity.class));
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

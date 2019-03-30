@@ -1,92 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <ImageView
-        android:id="@+id/quiz_img"
-        android:layout_width="270dp"
-        android:layout_height="159dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_light" />
-
-    <Button
-        android:id="@+id/button_quiz1"
-        android:layout_width="268dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/shape_button"
-        android:text="Button"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/quiz_img"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/quiz_img"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_quiz2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/shape_button"
-        android:text="Button"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/quiz_img"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/quiz_img"
-        app:layout_constraintTop_toBottomOf="@+id/button_quiz1" />
-
-    <Button
-        android:id="@+id/button_quiz3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/shape_button"
-        android:text="Button"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/quiz_img"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/quiz_img"
-        app:layout_constraintTop_toBottomOf="@+id/button_quiz2" />
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    app:cardBackgroundColor="@color/color_card"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
 
     <TextView
-        android:id="@+id/question_quiz"
-        android:layout_width="0dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:text="TextView"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-        android:textColor="#000"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_quiz1"
-        app:layout_constraintEnd_toEndOf="@+id/quiz_img"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/quiz_img"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_img"
-        app:layout_constraintVertical_bias="0.0"
-        android:background="#1249b4"/>
-
-
-</android.support.constraint.ConstraintLayout>
+        android:id="@+id/questionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="Hello World"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+</android.support.v7.widget.CardView>

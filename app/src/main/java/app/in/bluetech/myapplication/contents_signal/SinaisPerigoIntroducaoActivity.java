@@ -24,7 +24,7 @@ public class SinaisPerigoIntroducaoActivity extends AppCompatActivity {
         title = findViewById(R.id.titulo);
        // TextView conteudo = findViewById(R.id.content);
 
-        title.setText(getIntent().getStringExtra("title"));
+       // title.setText(getIntent().getStringExtra("title"));
         Log.d("TITLE ", title.getText().toString());
     }
     public void Proximo(View view) {
